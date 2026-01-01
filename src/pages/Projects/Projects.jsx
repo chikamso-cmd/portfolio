@@ -4,45 +4,55 @@ import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
 const projects = [
-  {
-    title: "Olova! A Lightweight JavaScript Library",
-    description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
-    color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
-  },
+  // {
+  //   title: "Olova! A Lightweight JavaScript Library",
+  //   description:
+  //     "A lightweight JavaScript library for creating beautiful, responsive UI components.",
+  //   src: "rock.jpg",
+  //   link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
+  //   color: "#5196fd",
+  //   githubLink: "https://github.com/olovajs/olova",
+  //   liveLink: "https://olova.js.org/",
+  // },
   {
     title: "A sleek portfolio built with React and Tailwind CSS ",
     description:
       "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
     src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767281613/Screenshot_2026-01-01_162610_vwv6pu.png",
     color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
-    liveLink: "https://codervai.vercel.app",
+    githubLink: "https://github.com/chikamso-cmd/portfolio",
+    liveLink: "nwaforgodspower.netlify.app",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: "🚀 Yamlfoods",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
+      "🚀 YamlTech is a modern e-commerce website designed to provide a seamless online shopping experience. It focuses on intuitive navigation, secure transactions, responsive design, and efficient product management to connect customers with quality products quickly and reliably",
     src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767283080/Screenshot_2026-01-01_165729_vm3vmj.png",
     color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
-    liveLink: "https://codewhisperer.vercel.app/",
+    githubLink: "https://github.com/yamltech/grocery-shop",
+    liveLink: "https://grocery-shop-fe-eight.vercel.app",
   },
   {
-    title: "CodeKori 🔥",
+    title: "Deivoc Integrated 🔥",
     description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
+      "Deivoc Integrated is a forward-thinking platform focused on the intersection of energy and data, bringing together industry professionals, data enthusiasts, and innovators to explore insights, solutions, and emerging technologies.",
     src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767281662/Screenshot_2026-01-01_161957_d42zmk.png",
     color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+    githubLink: "#",
+    liveLink: "https://deivocintegrated.netlify.app/",
+  },
+  {
+    title: "DSM 🔥",
+    description:
+      "DSM is a professional accounting website designed to showcase financial services, expertise, and client solutions, providing clear information, easy navigation, and a reliable platform for businesses and individuals.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767282567/Screenshot_2026-01-01_164725_txheb1.png",
+    color: "#ed649e",
+    githubLink: "https://github.com/chikamso-cmd/swiftminds",
+    liveLink: "https://swiftminds.netlify.app/",
   },
 ];
 

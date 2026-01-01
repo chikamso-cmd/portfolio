@@ -16,23 +16,43 @@ const EducationSection = () => {
   const educationData = [
     {
       degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
+      school: "Community High School Ibafo",
       mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      year: "2009-2012",
+      achievements: ["Subject: Accounting"],
+      skills: ["Business Studies", "Physical Education", "HomeEconomics"],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Focused on core subjects with emphasis on practical work and research methodologies.",
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
+      school: "Community High School Ibafo",
       mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      year: "2012-2015",
+      achievements: ["Subject: Accounting"],
+      skills: ["Account", "Economics", "Marketing", "Commerce"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Developed strong analytical and critical thinking skills through comprehensive study of Accounting and Business Studies.",
+    },
+    {
+      degree: "National Diploma in Accounting",
+      school: "The Polytechnic Ibadan",
+      mascot: "📗",
+      year: "2018-2020",
+      achievements: ["Subject: Accounting", "Subject: Auditing", "Subject: Taxation", "Subject: Cost Accounting"],
+      skills: ["Accounting", "Auditing", "Taxation", "Cost Accounting"],
+      description:
+        "Focused on practical financial skills, including bookkeeping, financial reporting, taxation, auditing, and cost accounting, preparing students for real-world business and organizational finance roles.",
+    },
+    {
+      degree: "Higher National Diploma in Accounting",
+      school: "The Polytechnic Ibadan",
+      mascot: "📗",
+      year: "2022-2025",
+      achievements: ["Subject: Accounting", "Subject: Auditing", "Subject: Taxation", "Subject: Cost Accounting"],
+      skills: ["Accounting", "Auditing", "Taxation", "Cost Accounting"],
+      description:
+        "Focused on practical financial skills, including bookkeeping, financial reporting, taxation, auditing, and cost accounting, preparing students for real-world business and organizational finance roles.",
     },
   ];
 
