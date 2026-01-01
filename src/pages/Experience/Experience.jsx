@@ -64,18 +64,34 @@ const ExperienceSection = () => {
     {
       icon: Layers,
       title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
+      company: "Yamltech",
+      period: "2020 - 2022",
       description:
         "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
     },
     {
       icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
-      period: "2023 - Present",
+      title: "Freelancer",
+      company: "Deivocintegrated",
+      period: "2022",
       description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+        "Helped in building the website for the company's online store.",
+    },
+    {
+      icon: Code2,
+      title: "Freelancer",
+      company: "swiftminds",
+      period: "2024",
+      description:
+        "SwiftMinds** is a professional website for an accounting firm, built to showcase services, expertise, and contact information with a clean, responsive design, smooth navigation, and user-friendly interface"
+    },
+    {
+      icon: Code2,
+      title: "Freelancer",
+      company: "Yamlfoods",
+      period: "2025 - Present",
+      description:
+        "Contributed to developing the online presence of the company's website.",
     },
   ];
 

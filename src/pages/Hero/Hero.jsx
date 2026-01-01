@@ -52,7 +52,7 @@ const profile = {
     title: 'Frontend Developer & UI/UX Enthusiast',
     description: 'JavaScript Developer | Problem Solver',
     skills: [
-        'React', 'NextJS', 'Redux', 'Html', 'Css', 'Tailwind', 'JavaScript'
+        'React', 'Redux', 'Html', 'Css', 'Tailwind', 'JavaScript'
         'Bootstrap', 'Git'
     ],
     hardWorker: true,
