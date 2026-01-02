@@ -15,7 +15,7 @@ const projects = [
   //   liveLink: "https://olova.js.org/",
   // },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
     description:
       "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
     src: "tree.jpg",
@@ -53,6 +53,16 @@ const projects = [
     color: "#ed649e",
     githubLink: "https://github.com/chikamso-cmd/swiftminds",
     liveLink: "https://swiftminds.netlify.app/",
+  },
+  {
+    title: "A sleek portfolio built with Html, CSS, and Javascript to showcase your skills, projects, and experience in a modern design. 🔥",
+    description:
+      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767290067/Screenshot_2026-01-01_185351_rpk2rz.png",
+    color: "#ed649e",
+    githubLink: "https://github.com/chikamso-cmd/Portfolio12",
+    liveLink: "https://elaborate-souffle-35aec0.netlify.app/",
   },
 ];
 
