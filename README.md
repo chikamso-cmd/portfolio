@@ -19,7 +19,7 @@ Welcome to my **portfolio website**! This site showcases my skills, experience, 
 ## Live Preview
 
 Check out the live preview of the portfolio website here:  
-[**Live Demo**](nwaforgodspower.netlify.app)
+[**Live Demo**](https://nwaforgodspower.netlify.app/)
 ---
 ### 🎯 Project Structure
 ```bash
@@ -114,7 +114,7 @@ The portfolio website consists of the following sections:
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **Icons:** React Icons
-- **Deployment:** Vercel
+- **Deployment:** Netlify
 
 ---
 
