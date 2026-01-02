@@ -1,12 +1,12 @@
 # Portfolio Website
+
 <div align="center">
   <pre>
   My Portfolio Website
   </pre>
 </div>
 
- 
-Welcome to my **portfolio website**! This site showcases my skills, experience, education, projects, and how to get in touch with me. It's built with **React** and **Vite** for a fast, modern web experience. You can explore my work, learn about my journey, and contact me directly.
+Welcome to my **portfolio website**! This site showcases my skills, experience, education, projects, and how to get in touch with me. It's built with **React** and **Vite** for a fast, modern web experience, with a focus on modern UI/UX and animations using **Framer Motion**. You can explore my work, learn about my journey, and contact me directly.
 
 ---
 
@@ -23,76 +23,73 @@ Check out the live preview of the portfolio website here:
 ---
 ### 🎯 Project Structure
 ```bash
-portfolio/
-├── node_modules/
+portfolio-main/
+├── .gitignore
+├── components.json
+├── eslint.config.js
+├── index.html
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── vercel.json
+├── vite.config.js
 ├── public/
-├── src/
-│   ├── assets/
-│   │   ├── css/
-│   │   │   ├── index.css
-│   │   │   └── tomorrow.css
-│   │   └── images/
-│   ├── components/
-│   │   ├── ui/
-│   │   │   ├── Reusable Components/
-│   │   │   │   ├── badge.jsx
-│   │   │   │   ├── button.jsx
-│   │   │   │   ├── card.jsx
-│   │   │   │   ├── EducationLoader.jsx
-│   │   │   │   ├── evervault-card.jsx
-│   │   │   │   ├── flip-words.jsx
-│   │   │   │   ├── icon-cloud.jsx
-│   │   │   │   ├── meteors.jsx
-│   │   │   │   ├── sparkles-text.jsx
-│   │   │   │   └── tooltip.jsx
-│   │   │   │
-│   │   │   ├── Main Components/
-│   │   │   │   ├── AnimatedGrid.jsx
-│   │   │   │   ├── Contact.jsx
-│   │   │   │   ├── Education.jsx
-│   │   │   │   ├── enhanced-portfolio-card.jsx
-│   │   │   │   ├── Experience.jsx
-│   │   │   │   ├── global.jsx
-│   │   │   │   ├── Header.jsx
-│   │   │   │   ├── Hero.jsx
-│   │   │   │   ├── Home.jsx
-│   │   │   │   ├── PortfolioPage.jsx
-│   │   │   │   ├── Projects.jsx
-│   │   │   │   └── Skills.jsx
-│   │   └── lib/
-│   │       └── utils.js
-│   ├── pages/
-│   │   ├── About/
-│   │   │   └── About.jsx
-│   │   ├── Contact/
-│   │   │   └── Contact.jsx
-│   │   ├── Experience/
-│   │   │   └── Experience.jsx
-│   │   ├── Header/
-│   │   │   └── Header.jsx
-│   │   ├── Hero/
-│   │   │   └── Hero.jsx
-│   │   ├── Projects/
-│   │   │   ├── Projects.jsx
-│   │   │   └── testProjects.jsx
-│   │   └── Skills/
-│   │       └── Skills.jsx
-│   ├── App.jsx
-│   └── main.jsx
-├── Configuration Files/
-│   ├── .eslintrc.js
-│   ├── .gitignore
-│   ├── components.json
-│   ├── index.html
-│   ├── jsconfig.json
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── postcss.config.js
-│   ├── README.md
-│   ├── tailwind.config.js
-│   ├── vercel.json
-│   └── vite.config.js
-
+│   ├── _redirects
+│   └── vite.svg
+└── src/
+    ├── App.jsx
+    ├── main.jsx
+    ├── assets/
+    │   ├── NWAFOR GOD’SPOWER CHIKAMSO.pdf
+    │   ├── react.svg
+    │   ├── css/
+    │   │   ├── Header.css
+    │   │   ├── index.css
+    │   │   └── tomorrow.css
+    │   └── images/
+    │       ├── favicon.ico
+    │       ├── hero.jpg
+    │       ├── Hero1.jpg
+    │       ├── olova-B0FjVVEL.png
+    │       └── olova.png
+    ├── components/
+    │   ├── AnimatedGrid.jsx
+    │   ├── enhanced-portfolio-card.jsx
+    │   ├── globe.jsx
+    │   └── ui/
+    │       ├── badge.jsx
+    │       ├── button.jsx
+    │       ├── card.jsx
+    │       ├── cool-mode.jsx
+    │       ├── EducationLoader.jsx
+    │       ├── evervault-card.jsx
+    │       ├── flip-words.jsx
+    │       ├── icon-cloud.jsx
+    │       ├── meteors.jsx
+    │       ├── sparkles-text.jsx
+    │       └── tooltip.jsx
+    ├── lib/
+    │   └── utils.js
+    └── pages/
+        ├── About/
+        │   └── About.jsx
+        ├── Contact/
+        │   └── Contact.jsx
+        ├── Education/
+        │   └── Education.jsx
+        ├── Experience/
+        │   └── Experience.jsx
+        ├── Header/
+        │   └── Header.jsx
+        ├── Hero/
+        │   └── Hero.jsx
+        ├── Projects/
+        │   └── Projects.jsx
+        └── Skills/
+            └── Skills.jsx
 ```
 ---
 
@@ -101,11 +98,27 @@ portfolio/
 The portfolio website consists of the following sections:
 
 - **Home**: Introduction and a brief overview.
+- **About**: A little about me.
 - **Skills**: A detailed list of my technical skills.
 - **Experience**: My professional journey and work experience.
 - **Education**: Academic background and certifications.
 - **Projects**: A showcase of the projects I've worked on.
 - **Contact**: Information on how to reach out to me.
+
+---
+
+## Projects
+
+Here are some of the projects I've worked on:
+
+- **React and Tailwind CSS Portfolio**: A sleek portfolio built with React and Tailwind CSS to showcase skills, projects, and experience in a modern design.
+- **Yamlfoods**: A modern e-commerce website designed to provide a seamless online shopping experience.
+- **Deivoc Integrated**: A forward-thinking platform focused on the intersection of energy and data.
+- **DSM**: A professional accounting website designed to showcase financial services, expertise, and client solutions.
+- **HTML, CSS, and Javascript Portfolio**: A portfolio built with HTML, CSS, and Javascript to showcase skills, projects, and experience.
+- **Yamltech**: A portfolio IT solutions website focused on delivering reliable, secure, and responsive technology services for businesses.
+- **Fireclient**: A data-driven platform that helps SaaS, B2B, and B2C businesses monitor analytics, gain insights, and increase revenue.
+- **Loopbox**: An idea to help improve the way contributions are made in our society for transparency and accountability.
 
 ---
 
@@ -186,4 +199,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 <div align="center"> Made with ❤️ by Nwafor Godspower </div>
-
