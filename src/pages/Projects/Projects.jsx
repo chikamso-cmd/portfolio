@@ -76,6 +76,26 @@ const projects = [
     githubLink: "#",
     liveLink: "https://yamltech.com/",
   },
+  {
+    title: "Fireclient. 🔥",
+    description:
+      "Fireclient is a data-driven platform that helps SaaS, B2B, and B2C businesses monitor analytics, gain insights, and increase revenue through fast, flexible financing solutions.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767334853/Screenshot_2026-01-02_071812_mrf4b2.png",
+    color: "#ed649e",
+    githubLink: "https://github.com/chikamso-cmd/my-tailwindcss-app",
+    liveLink: "https://fireclient-analytics.netlify.app/",
+  },
+  {
+    title: "Loopbox. 🔥",
+    description:
+      "Loopbox is an idea i came up with to help improve the way contirbutions are made in our society for transparency and accountability.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767335547/Screenshot_2026-01-02_073208_jikz0s.png",
+    color: "#ed649e",
+    githubLink: "https://github.com/chikamso-cmd/LoopBox",
+    liveLink: "https://loopbox-savings.netlify.app/",
+  },
 ];
 
 export default function Projects() {
