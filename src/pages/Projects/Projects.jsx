@@ -15,7 +15,8 @@ const projects = [
   //   liveLink: "https://olova.js.org/",
   // },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
+    title:
+      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
     description:
       "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
     src: "tree.jpg",
@@ -27,7 +28,7 @@ const projects = [
   {
     title: "🚀 Yamlfoods",
     description:
-      "🚀 YamlTech is a modern e-commerce website designed to provide a seamless online shopping experience. It focuses on intuitive navigation, secure transactions, responsive design, and efficient product management to connect customers with quality products quickly and reliably",
+      "🚀 Yamlfoods is a modern e-commerce website designed to provide a seamless online shopping experience. It focuses on intuitive navigation, secure transactions, responsive design, and efficient product management to connect customers with quality products quickly and reliably",
     src: "water.jpg",
     link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767283080/Screenshot_2026-01-01_165729_vm3vmj.png",
     color: "#fff",
@@ -55,14 +56,25 @@ const projects = [
     liveLink: "https://swiftminds.netlify.app/",
   },
   {
-    title: "A sleek portfolio built with Html, CSS, and Javascript to showcase your skills, projects, and experience in a modern design. 🔥",
+    title:
+      "A sleek portfolio built with Html, CSS, and Javascript to showcase your skills, projects, and experience in a modern design. 🔥",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
+      "A  portfolio built with Html, CSS, and Javascript to showcase your skills, projects, and experience in a modern design.",
     src: "house.jpg",
     link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767290067/Screenshot_2026-01-01_185351_rpk2rz.png",
     color: "#ed649e",
     githubLink: "https://github.com/chikamso-cmd/Portfolio12",
     liveLink: "https://elaborate-souffle-35aec0.netlify.app/",
+  },
+  {
+    title: "Yamltech. 🔥",
+    description:
+      "Yamltech is a portfolio IT solutions website focused on delivering reliable, secure, and responsive technology services for businesses.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767328654/yamltechl%20landingpage.png",
+    color: "#ed649e",
+    githubLink: "#",
+    liveLink: "https://yamltech.com/",
   },
 ];
 

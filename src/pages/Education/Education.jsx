@@ -17,7 +17,7 @@ const EducationSection = () => {
     {
       degree: "Secondary School Certificate (SSC)",
       school: "Community High School Ibafo",
-      mascot: "📘",
+      mascot: "🎓",
       year: "2009-2012",
       achievements: ["Subject: Accounting"],
       skills: ["Business Studies", "Physical Education", "HomeEconomics"],
@@ -27,7 +27,7 @@ const EducationSection = () => {
     {
       degree: "Higher Secondary Certificate (HSC)",
       school: "Community High School Ibafo",
-      mascot: "📗",
+      mascot: "🎓",
       year: "2012-2015",
       achievements: ["Subject: Accounting"],
       skills: ["Account", "Economics", "Marketing", "Commerce"],
@@ -37,22 +37,32 @@ const EducationSection = () => {
     {
       degree: "National Diploma in Accounting",
       school: "The Polytechnic Ibadan",
-      mascot: "📗",
+      mascot: "🎓",
       year: "2018-2020",
-      achievements: ["Subject: Accounting", "Subject: Auditing", "Subject: Taxation", "Subject: Cost Accounting"],
+      achievements: [
+        "Subject: Accounting",
+        "Subject: Auditing",
+        "Subject: Taxation",
+        "Subject: Cost Accounting",
+      ],
       skills: ["Accounting", "Auditing", "Taxation", "Cost Accounting"],
       description:
-        "Focused on practical financial skills, including bookkeeping, financial reporting, taxation, auditing, and cost accounting, preparing students for real-world business and organizational finance roles.",
+        "Focused on practical financial skills, including bookkeeping, financial reporting, taxation, auditing, and cost accounting, in preparation for real-world business and organizational finance roles.",
     },
     {
       degree: "Higher National Diploma in Accounting",
       school: "The Polytechnic Ibadan",
-      mascot: "📗",
+      mascot: "🎓",
       year: "2022-2025",
-      achievements: ["Subject: Accounting", "Subject: Auditing", "Subject: Taxation", "Subject: Cost Accounting"],
+      achievements: [
+        "Subject: Accounting",
+        "Subject: Auditing",
+        "Subject: Taxation",
+        "Subject: Cost Accounting",
+      ],
       skills: ["Accounting", "Auditing", "Taxation", "Cost Accounting"],
       description:
-        "Focused on practical financial skills, including bookkeeping, financial reporting, taxation, auditing, and cost accounting, preparing students for real-world business and organizational finance roles.",
+        "Focused on practical financial skills, including bookkeeping, financial reporting, taxation, auditing, and cost accounting, in preparation for real-world business and organizational finance roles.",
     },
   ];
 

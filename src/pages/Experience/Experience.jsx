@@ -55,11 +55,11 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
+      title: "Freelancer",
+      company: "Developer",
       period: "2019 - 2020",
       description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
+        "Worked on developing and customizing Html and Css websites for clients in Nigeria.",
     },
     {
       icon: Layers,
@@ -75,7 +75,7 @@ const ExperienceSection = () => {
       company: "Deivocintegrated",
       period: "2022",
       description:
-        "Helped in building the website for the company's online store.",
+        "Helped in building the website for the company's online presence, ensuring a seamless user experience.",
     },
     {
       icon: Code2,
@@ -83,7 +83,7 @@ const ExperienceSection = () => {
       company: "swiftminds",
       period: "2024",
       description:
-        "SwiftMinds** is a professional website for an accounting firm, built to showcase services, expertise, and contact information with a clean, responsive design, smooth navigation, and user-friendly interface"
+        "SwiftMinds is a professional website for an accounting firm, built to showcase services, expertise, and contact information with a clean, user-friendly design."
     },
     {
       icon: Code2,
@@ -91,18 +91,18 @@ const ExperienceSection = () => {
       company: "Yamlfoods",
       period: "2025 - Present",
       description:
-        "Contributed to developing the online presence of the company's website.",
+        "Contributed to developing the online presence of the company's website ensuring a seamless user experience, responsive design, and smooth navigation, and user-friendly interface.",
     },
   ];
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b relative overflow-hidden pt-32 pb-20">
+      <div className="min-h-screen bg-linear-to-b relative overflow-hidden pt-32 pb-20">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-[#04081A]" />
 
         {/* Grid background */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(50,50,70,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,50,70,0.15)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(50,50,70,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,50,70,0.15)_1px,transparent_1px)] bg-size[40px_40px] mask-[radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
 
         {/* Animated particles */}
         <div className="absolute inset-0">
@@ -124,10 +124,10 @@ const ExperienceSection = () => {
           {/* Section header with enhanced effects */}
           <div className="flex flex-col items-center space-y-8 mb-20">
             <div className="relative">
-              <h2 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
+              <h2 className="text-5xl md:text-7xl font-black text-transparent bg-linear-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
                 Professional Journey
               </h2>
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
+              <div className="absolute inset-0 -z-10 bg-linear-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
             </div>
             <p className="text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl">
               "Transforming ideas into digital reality, one project at a time"
