@@ -96,6 +96,16 @@ const projects = [
     githubLink: "https://github.com/chikamso-cmd/LoopBox",
     liveLink: "https://loopbox-savings.netlify.app/",
   },
+  {
+    title: "Rest-Api-County. 🔥",
+    description:
+      "A website that shows country information and oyher information.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767799281/Screenshot_2026-01-07_161751_cd1skd.png",
+    color: "#ed649e",
+    githubLink: "https://github.com/chikamso-cmd/Rest-Api-County",
+    liveLink: "https://rest-county-api.netlify.app/",
+  },
 ];
 
 export default function Projects() {
