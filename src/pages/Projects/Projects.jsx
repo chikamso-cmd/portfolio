@@ -33,7 +33,7 @@ const projects = [
     link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767283080/Screenshot_2026-01-01_165729_vm3vmj.png",
     color: "#fff",
     githubLink: "https://github.com/yamltech/grocery-shop",
-    liveLink: "https://grocery-shop-fe-eight.vercel.app",
+    liveLink: "https://yamlfoods.ng/",
   },
   {
     title: "Deivoc Integrated 🔥",
@@ -105,6 +105,16 @@ const projects = [
     color: "#ed649e",
     githubLink: "https://github.com/chikamso-cmd/Rest-Api-County",
     liveLink: "https://rest-county-api.netlify.app/",
+  },
+  {
+    title: "Bump2bay. 🔥",
+    description:
+      "A website that shows country information and oyher information.",
+    src: "house.jpg",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767799281/Screenshot_2026-01-07_161751_cd1skd.png",
+    color: "#ed649e",
+    githubLink: "https://github.com/chikamso-cmd/Bump2Baby",
+    liveLink: "https://bump-2-baby.netlify.app/",
   },
 ];
 
