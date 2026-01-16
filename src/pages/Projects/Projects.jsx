@@ -107,11 +107,11 @@ const projects = [
     liveLink: "https://rest-county-api.netlify.app/",
   },
   {
-    title: "Bump2bay. 🔥",
+    title: "Bump2Baby. 🔥",
     description:
-      "A website that shows country information and oyher information.",
+      "Bump2Baby is a comprehensive maternal health platform designed to guide expectant mothers through their pregnancy journey with personalized tracking, expert health insights, and essential care resources.",
     src: "house.jpg",
-    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767799281/Screenshot_2026-01-07_161751_cd1skd.png",
+    link: "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1768566261/Screenshot_2026-01-15_174324_wtukup.png",
     color: "#ed649e",
     githubLink: "https://github.com/chikamso-cmd/Bump2Baby",
     liveLink: "https://bump-2-baby.netlify.app/",
