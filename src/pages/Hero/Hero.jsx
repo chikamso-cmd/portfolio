@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import resume from "@/assets/NWAFOR GOD’SPOWER CHIKAMSO.pdf";
+import resume from "@/assets/Nwafor Godspower Chikamso.pdf";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "@/assets/css/tomorrow.css";
@@ -176,12 +176,12 @@ const profile = {
               <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
 
               {/* Welcome badge */}
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
+              {/* <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
                 <span className="text-gray-300 text-xs sm:text-sm font-medium">
                   Welcome to my universe
                 </span>
-              </div>
+              </div> */}
 
               {/* Name section */}
               <div className="relative mb-6 sm:mb-8">
