@@ -35,7 +35,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-balance"
         >
-          Hi, I&apos;m a <span className="font-semibold text-slate-900 dark:text-slate-100">Frontend Developer</span>. 
+          Hi, my name is <span className="font-semibold text-slate-900 dark:text-slate-100">Nwafor God'spower Chikamso</span> and I&apos;m a <span className="font-semibold text-slate-900 dark:text-slate-100">Frontend Developer</span>. 
           I build fast, responsive, and user-friendly web applications with modern technologies.
         </motion.p>
 
@@ -48,7 +48,7 @@ export const Hero = () => {
           <Button size="lg" variant="primary" rightIcon={ArrowRight} onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
             View Projects
           </Button>
-          <Button size="lg" variant="outline" leftIcon={Download}>
+          <Button size="lg" variant="outline" leftIcon={Download} download href="/Nwafor_Godspower_Chikamso_CV.pdf" target="_blank">
             Download CV
           </Button>
         </motion.div>

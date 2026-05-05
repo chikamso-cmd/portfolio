@@ -1,4 +1,4 @@
-import React from 'react';
+import  { React,  useState} from 'react';
 import { motion } from 'motion/react';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
@@ -15,11 +15,94 @@ export const Contact = () => {
     },
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.currentTarget);
+  //   const data = Object.fromEntries(formData.entries());
+  //   mutation.mutate(data);
+  // };
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState(null);
+
+  const validateForm = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      tempErrors.name = "Name is required";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      tempErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Email is invalid";
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      tempErrors.message = "Message is required";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    mutation.mutate(data);
+
+    if (!validateForm()) {
+      setStatus("Please fill in all required fields correctly.");
+      return;
+    }
+
+    // Create a new FormData object to send to Web3Forms API
+    const form = new FormData();
+    form.append("access_key", "2a4cf41b-ff9b-4425-a5b3-986c77041254"); // Replace with your Web3Forms access key
+    form.append("name", formData.name);
+    form.append("email", formData.email);
+    form.append("subject", formData.subject || "New Contact Form Submission");
+    form.append("message", formData.message);
+
+    try {
+      // Send form data to Web3Forms API
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+        setErrors({});
+      } else {
+        setStatus(result.message || "There was an error sending your message.");
+      }
+    } catch (error) {
+      setStatus("An error occurred. Please try again.");
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -42,7 +125,7 @@ export const Contact = () => {
               </div>
               <div>
                 <h4 className="font-bold text-lg">Email</h4>
-                <p className="text-slate-600 dark:text-slate-400">hello@nwaforamaka.com</p>
+                <p className="text-slate-600 dark:text-slate-400">godspowerchikamso2@gmail.com</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -58,16 +141,24 @@ export const Contact = () => {
             <div className="pt-8">
               <h4 className="font-bold text-lg mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                {[Github, Linkedin, Twitter].map((Icon, i) => (
-                  <motion.a
-                    key={i}
-                    href="#"
-                    whileHover={{ y: -5 }}
-                    className="p-3 glass hover:bg-primary-500 hover:text-white transition-all rounded-xl"
-                  >
-                    <Icon size={20} />
-                  </motion.a>
-                ))}
+               {/* Define your links in an array of objects */}
+{[
+  { Icon: Github, url: "https://github.com/chikamso-cmd" },
+  { Icon: Linkedin, url: "https://linkedin.com/in/Nelson Nwafor" },
+  { Icon: Twitter, url: "https://twitter.com/@RealJude" }
+].map(({ Icon, url }, i) => (
+  <motion.a
+    key={i}
+    href={url}
+    target="_blank"             // Opens in a new tab
+    rel="noopener noreferrer"    // Security best practice
+    whileHover={{ y: -5 }}
+    className="p-3 glass hover:bg-primary-500 hover:text-white transition-all rounded-xl"
+  >
+    <Icon size={20} />
+  </motion.a>
+))}
+
               </div>
             </div>
           </div>
@@ -86,8 +177,15 @@ export const Contact = () => {
                     name="name"
                     type="text"
                     placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border-transparent focus:border-primary-500 focus:ring-0 transition-all outline-none"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                        errors.name ? "border-red-500" : "border-gray-700"
+                      } focus:border-blue-500 focus:outline-none transition-colors`}
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                   />
+                  {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-semibold tracking-wide uppercase text-slate-500">
@@ -99,8 +197,15 @@ export const Contact = () => {
                     name="email"
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border-transparent focus:border-primary-500 focus:ring-0 transition-all outline-none"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                        errors.email ? "border-red-500" : "border-gray-700"
+                      } focus:border-blue-500 focus:outline-none transition-colors`}
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                   />
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
               </div>
               <div className="space-y-2">
@@ -113,8 +218,15 @@ export const Contact = () => {
                   name="message"
                   rows={5}
                   placeholder="Tell me about your project..."
-                  className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border-transparent focus:border-primary-500 focus:ring-0 transition-all outline-none resize-none"
+                  className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
+                    errors.message ? "border-red-500" : "border-gray-700"
+                  } focus:border-blue-500 focus:outline-none transition-colors`}
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                 />
+                {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
               </div>
 
               <Button
@@ -137,6 +249,18 @@ export const Contact = () => {
                 </motion.p>
               )}
             </form>
+             {/* Status Message */}
+              {status && (
+                <div
+                  className={`mt-4 text-center ${
+                    status.includes("success")
+                      ? "text-green-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  <p>{status}</p>
+                </div>
+              )}
           </Card>
         </div>
       </div>

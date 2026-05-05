@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
 
 export const Footer = () => {
@@ -9,7 +8,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="text-center md:text-left">
           <p className="text-2xl font-display font-bold text-primary-600 mb-2">
-            DevPortfolio
+            Nwafor God'spower Chikamso
           </p>
           <p className="text-slate-500 text-sm">
             © {currentYear} Created with precision and care.
@@ -31,9 +30,9 @@ export const Footer = () => {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 text-slate-500 text-sm">
+        {/* <div className="flex items-center gap-2 text-slate-500 text-sm">
           Built with <Heart size={14} className="text-red-500 fill-red-500" /> and React
-        </div>
+        </div> */}
       </div>
     </footer>
   );

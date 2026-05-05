@@ -37,13 +37,13 @@ export const About = () => {
                 <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">
                   <User size={20} />
                 </div>
-                <span className="font-medium text-sm">Age: 24</span>
+                <span className="font-medium text-sm">Age: 28</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">
                   <Rocket size={20} />
                 </div>
-                <span className="font-medium text-sm">Experience: 4+ Years</span>
+                <span className="font-medium text-sm">Experience: 3+ Years</span>
               </div>
             </div>
           </motion.div>

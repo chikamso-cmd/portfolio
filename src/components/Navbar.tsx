@@ -34,7 +34,7 @@ export const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           className="text-2xl font-display font-bold text-primary-600 dark:text-primary-400"
         >
-          Dev<span className="text-slate-900 dark:text-slate-100">Portfolio</span>
+          Nwafor<span className="text-slate-900 dark:text-slate-100"> God'spower</span>
         </motion.a>
 
         {/* Desktop Nav */}
