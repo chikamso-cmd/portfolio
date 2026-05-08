@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
   {
     id: '7',
     title: 'OgaLandLord',
-    description: 'Bump2Baby is a comprehensive maternal health platform designed to guide expectant mothers through their pregnancy journey with personalized tracking, expert health insights, and essential care resources',
+    description: 'OgaLandlord is a revolutionized rental market by developing an innovative platform that directly connects tenants with vetted agents, eradicating unfair overpricing and ensuring a seamless rental experience. By leveraging technology, OgaLandlord empowers tenants to find affordable housing while providing agents with a reliable channel to connect with potential renters.',
     image: '/land.JPG',
     techStack: ['React', 'TypeScript', 'Tailwind', "ReactQuery"],
     liveUrl: 'https://ogalandlord.netlify.app',

@@ -14,7 +14,7 @@ export const Hero = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="mb-6 inline-block py-1 px-3 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase"
         >
           Available for new opportunities
@@ -23,7 +23,7 @@ export const Hero = () => {
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="text-5xl md:text-7xl font-display font-black mb-6 text-balance leading-tight"
         >
           Building Digital <span className="text-primary-600 dark:text-primary-400">Experiences</span> That Matter
@@ -32,7 +32,7 @@ export const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-balance"
         >
           Hi, my name is <span className="font-semibold text-slate-900 dark:text-slate-100">Nwafor God'spower Chikamso</span> and I&apos;m a <span className="font-semibold text-slate-900 dark:text-slate-100">Frontend Developer</span>. 
@@ -48,9 +48,10 @@ export const Hero = () => {
           <Button size="lg" variant="primary" rightIcon={ArrowRight} onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
             View Projects
           </Button>
-          <Button size="lg" variant="outline" leftIcon={Download} download href="/Nwafor_Godspower_Chikamso_CV.pdf" target="_blank">
-            Download CV
-          </Button>
+          <button >
+            <a className="bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700 inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none px-12 py-3 " download href="/Nwafor_Godspower_Chikamso_CV.pdf" target="_blank"> Download CV </a> 
+            
+          </button>
         </motion.div>
       </div>
 
