@@ -13,7 +13,7 @@ export interface Skill {
   name: string;
   icon: string;
   level: number; // 0 to 100
-  category: 'Frontend' | 'Backend' | 'Tools' | 'Soft Skills';
+  category: 'Frontend' | 'Backend' | 'Tools' | 'Soft Skills' | 'DevOps' | 'Analytics' | "Hosting" | 'Best Practices';
 }
 
 export interface Experience {

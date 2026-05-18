@@ -20,18 +20,33 @@ export const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 italic">
-              Passionate about crafting pixel-perfect web experiences.
+              Passionate about crafting pixel-perfect, high-performance web experiences.
             </h3>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              I am a dedicated Frontend Developer with a strong foundation in modern web technologies. 
-              My journey in web development started with a curiosity about how things work on the internet, 
-              which quickly evolved into a passion for building beautiful and functional user interfaces.
+              I am a dedicated Frontend Developer with a strong foundation in modern web technologies.
+              My journey began with curiosity about how the web works and grew into a focus on building
+              delightful, accessible interfaces that scale with real user needs.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              I focus on performance, clean UI, and exceptional user experience. I believe that every detail 
-              matters, and I strive to write clean, maintainable code that solves real-world problems.
+              I prioritize fast load times, intuitive interactions, and clean, maintainable code. I use
+              component-driven architecture, automated testing, and type-safe tooling to deliver reliable
+              experiences that are easy to iterate on.
             </p>
-            
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+              My toolchain includes Git and GitHub for version control, CI/CD pipelines for continuous
+              delivery, and deployments to platforms like Vercel, Netlify, and Render. I work with package
+              managers such as npm, yarn, and bun, and I use analytics and optimization tools like PostHog
+              alongside Lighthouse and other performance profilers to measure and improve real-user
+              experience. Cross-browser compatibility and progressive enhancement are standard practices
+              in my workflow.
+            </p>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+              I enjoy collaborating closely with designers, product managers, and backend engineers,
+              participating in code reviews and mentoring teammates to raise the bar for quality and
+              consistency. I'm always learning and open to new tools and patterns that make products
+              faster, more accessible, and more enjoyable to use.
+            </p>
+
             <div className="grid grid-cols-2 gap-4 pt-4">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">

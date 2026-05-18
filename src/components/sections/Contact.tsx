@@ -4,6 +4,7 @@ import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
 import { Send, MapPin, Mail, Phone, Github, Linkedin, Twitter } from 'lucide-react';
 import { useMutation } from '@tanstack/react-query';
+import { ReactDOMServerReadableStream } from 'react-dom/server';
 
 export const Contact = () => {
   const mutation = useMutation({
@@ -75,7 +76,7 @@ type FormData = {
     form.append("access_key", "2a4cf41b-ff9b-4425-a5b3-986c77041254"); // Replace with your Web3Forms access key
     form.append("name", formData.name);
     form.append("email", formData.email);
-    form.append("subject", formData.subject || "New Contact Form Submission");
+    // form.append("subject", formData.subject || "New Contact Form Submission");
     form.append("message", formData.message);
 
     try {
@@ -92,7 +93,6 @@ type FormData = {
         setFormData({
           name: "",
           email: "",
-          subject: "",
           message: "",
         });
         setErrors({});

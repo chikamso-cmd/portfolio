@@ -9,6 +9,15 @@ export const SKILLS: Skill[] = [
   { name: 'Bootstrap', icon: 'Layout', level: 85, category: 'Frontend' },
   { name: 'React Query', icon: 'Database', level: 88, category: 'Frontend' },
   { name: 'API Integration', icon: 'Link', level: 92, category: 'Frontend' },
+  { name: 'Git', icon: 'GitBranch', level: 92, category: 'Tools' },
+  { name: 'GitHub', icon: 'Github', level: 95, category: 'Tools' },
+  { name: 'CI/CD', icon: 'Repeat', level: 85, category: 'DevOps' },
+  { name: 'Vercel', icon: 'Cloud', level: 90, category: 'Hosting' },
+  { name: 'Netlify', icon: 'CloudRain', level: 90, category: 'Hosting' },
+  { name: 'Render', icon: 'Server', level: 88, category: 'Hosting' },
+  { name: 'Cross-Browser Compatibility', icon: 'Globe', level: 88, category: 'Best Practices' },
+  { name: 'Bun', icon: 'Package', level: 75, category: 'Tools' },
+  { name: 'PostHog', icon: 'TrendingUp', level: 80, category: 'Analytics' },
 ];
 
 export const PROJECTS: Project[] = [
@@ -90,29 +99,37 @@ export const EXPERIENCE: Experience[] = [
     company: 'Yamltech inc.',
     role: 'Frontend Developer',
     period: '2023 - 2024',
-    description: 'Leading the frontend team in developing scalable web applications using React and TypeScript.',
+    description: 'Built and maintained responsive, accessible user interfaces using React and TypeScript; collaborated with backend engineers to integrate APIs and improve performance and developer workflows.',
   },
   {
     id: '2',
     company: 'Creative Web Studio',
     role: 'Frontend Developer',
     period: '2020 - 2022',
-    description: 'Built various responsive websites and web apps for clients across different industries.',
+    description: 'Delivered client-facing web projects from design to production, translating visual designs into interactive, cross-browser-compatible websites while ensuring performance and SEO best practices.',
   },
   {
     id: '3',
     company: 'AXIOMVAULT LLC',
     role: 'Frontend Developer',
     period: '2026 - till present',
-    description: 'Leading the frontend team in developing scalable web applications using React and TypeScript.',
+    description: 'Leading frontend development for secure enterprise applications; responsible for performance optimization, component architecture, and implementing CI/CD and observability integrations.',
   },
   {
     id: '4',
     company: 'OgaLandLord',
     role: 'Frontend Developer',
     period: '2026 - till present',
-    description: 'Leading the frontend team in developing scalable web applications using React and TypeScript.',
-  }
+    description: 'Built the scalable marketplace frontend focused on real-world usability, responsive design, and fast load times; worked closely with product and backend teams to ship iterative improvements.',
+  },
+  
+  {
+    id: '5',
+    company: 'MpfStudio91',
+    role: 'Lead Frontend Developer',
+    period: '2026 - till present',
+    description: 'Architected component libraries and frontend best practices, mentored engineers, and established testing and accessibility standards to improve delivery quality across projects.',
+  },
 ];
 
 export const SERVICES: Service[] = [
