@@ -1,4 +1,4 @@
-import  { React,  useState} from 'react';
+import { React, useState } from 'react';
 import { motion } from 'motion/react';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
@@ -22,11 +22,11 @@ export const Contact = () => {
   //   const data = Object.fromEntries(formData.entries());
   //   mutation.mutate(data);
   // };
-type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
+  type FormData = {
+    name: string;
+    email: string;
+    message: string;
+  };
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -141,23 +141,23 @@ type FormData = {
             <div className="pt-8">
               <h4 className="font-bold text-lg mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-               {/* Define your links in an array of objects */}
-{[
-  { Icon: Github, url: "https://github.com/chikamso-cmd" },
-  { Icon: Linkedin, url: "https://linkedin.com/in/Nelson Nwafor" },
-  { Icon: Twitter, url: "https://twitter.com/@RealJude" }
-].map(({ Icon, url }, i) => (
-  <motion.a
-    key={i}
-    href={url}
-    target="_blank"             // Opens in a new tab
-    rel="noopener noreferrer"    // Security best practice
-    whileHover={{ y: -5 }}
-    className="p-3 glass hover:bg-primary-500 hover:text-white transition-all rounded-xl"
-  >
-    <Icon size={20} />
-  </motion.a>
-))}
+                {/* Define your links in an array of objects */}
+                {[
+                  { Icon: Github, url: "https://github.com/chikamso-cmd" },
+                  { Icon: Linkedin, url: "https://linkedin.com/in/nelson-nwafor-55b33533a" },
+                  { Icon: Twitter, url: "https://twitter.com/@RealJude" }
+                ].map(({ Icon, url }, i) => (
+                  <motion.a
+                    key={i}
+                    href={url}
+                    target="_blank"             // Opens in a new tab
+                    rel="noopener noreferrer"    // Security best practice
+                    whileHover={{ y: -5 }}
+                    className="p-3 glass hover:bg-primary-500 hover:text-white transition-all rounded-xl"
+                  >
+                    <Icon size={20} />
+                  </motion.a>
+                ))}
 
               </div>
             </div>
@@ -177,13 +177,12 @@ type FormData = {
                     name="name"
                     type="text"
                     placeholder="John Doe"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                        errors.name ? "border-red-500" : "border-gray-700"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.name ? "border-red-500" : "border-gray-700"
                       } focus:border-blue-500 focus:outline-none transition-colors`}
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                   />
                   {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
                 </div>
@@ -197,8 +196,7 @@ type FormData = {
                     name="email"
                     type="email"
                     placeholder="john@example.com"
-                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                        errors.email ? "border-red-500" : "border-gray-700"
+                    className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.email ? "border-red-500" : "border-gray-700"
                       } focus:border-blue-500 focus:outline-none transition-colors`}
                     value={formData.email}
                     onChange={(e) =>
@@ -218,9 +216,8 @@ type FormData = {
                   name="message"
                   rows={5}
                   placeholder="Tell me about your project..."
-                  className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                    errors.message ? "border-red-500" : "border-gray-700"
-                  } focus:border-blue-500 focus:outline-none transition-colors`}
+                  className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message ? "border-red-500" : "border-gray-700"
+                    } focus:border-blue-500 focus:outline-none transition-colors`}
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
@@ -249,18 +246,17 @@ type FormData = {
                 </motion.p>
               )}
             </form>
-             {/* Status Message */}
-              {status && (
-                <div
-                  className={`mt-4 text-center ${
-                    status.includes("success")
-                      ? "text-green-400"
-                      : "text-red-400"
+            {/* Status Message */}
+            {status && (
+              <div
+                className={`mt-4 text-center ${status.includes("success")
+                    ? "text-green-400"
+                    : "text-red-400"
                   }`}
-                >
-                  <p>{status}</p>
-                </div>
-              )}
+              >
+                <p>{status}</p>
+              </div>
+            )}
           </Card>
         </div>
       </div>

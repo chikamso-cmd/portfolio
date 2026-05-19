@@ -64,6 +64,14 @@ export const About = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 gap-6">
+            <Card className="p-0 overflow-hidden" delay={0}>
+              <img
+                loading="lazy"
+                src="/Nelson.jpg"
+                alt="Nelson"
+                className="w-full h-96 sm:h-full md:h-80 lg:h-96 object-cover shadow-md"
+              />
+            </Card>
             <Card className="p-6" delay={0.1}>
               <div className="flex items-start space-x-4">
                 <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl text-blue-600 shrink-0">

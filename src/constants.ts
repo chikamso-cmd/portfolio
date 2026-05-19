@@ -94,32 +94,33 @@ export const PROJECTS: Project[] = [
 ];
 
 export const EXPERIENCE: Experience[] = [
+  
   {
     id: '1',
-    company: 'Yamltech inc.',
-    role: 'Frontend Developer',
-    period: '2023 - 2024',
-    description: 'Built and maintained responsive, accessible user interfaces using React and TypeScript; collaborated with backend engineers to integrate APIs and improve performance and developer workflows.',
-  },
-  {
-    id: '2',
     company: 'Creative Web Studio',
     role: 'Frontend Developer',
     period: '2020 - 2022',
     description: 'Delivered client-facing web projects from design to production, translating visual designs into interactive, cross-browser-compatible websites while ensuring performance and SEO best practices.',
   },
   {
+    id: '2',
+    company: 'Yamltech inc.',
+    role: 'Frontend Developer',
+    period: '2023 - 2025',
+    description: 'Built and maintained responsive, accessible user interfaces using React and TypeScript; collaborated with backend engineers to integrate APIs and improve performance and developer workflows.',
+  },
+  {
     id: '3',
     company: 'AXIOMVAULT LLC',
     role: 'Frontend Developer',
-    period: '2026 - till present',
+    period: '2026',
     description: 'Leading frontend development for secure enterprise applications; responsible for performance optimization, component architecture, and implementing CI/CD and observability integrations.',
   },
   {
     id: '4',
     company: 'OgaLandLord',
     role: 'Frontend Developer',
-    period: '2026 - till present',
+    period: '2026 ',
     description: 'Built the scalable marketplace frontend focused on real-world usability, responsive design, and fast load times; worked closely with product and backend teams to ship iterative improvements.',
   },
   
@@ -127,7 +128,7 @@ export const EXPERIENCE: Experience[] = [
     id: '5',
     company: 'MpfStudio91',
     role: 'Lead Frontend Developer',
-    period: '2026 - till present',
+    period: '2026',
     description: 'Architected component libraries and frontend best practices, mentored engineers, and established testing and accessibility standards to improve delivery quality across projects.',
   },
 ];

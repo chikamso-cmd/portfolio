@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ThemeToggle } from './ui/ThemeToggle';
+// import { ThemeToggle } from './ui/ThemeToggle';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -51,12 +51,12 @@ export const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center space-x-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-slate-600 dark:text-slate-400"
