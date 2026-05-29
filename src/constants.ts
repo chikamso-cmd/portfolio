@@ -67,8 +67,8 @@ export const PROJECTS: Project[] = [
     description: 'Bump2Baby is a comprehensive maternal health platform designed to guide expectant mothers through their pregnancy journey with personalized tracking, expert health insights, and essential care resources',
     image: 'https://res.cloudinary.com/dfcr3ut7b/image/upload/v1768566261/Screenshot_2026-01-15_174324_wtukup.png',
     techStack: ['React', 'TypeScript', 'Tailwind'],
-    liveUrl: 'https://github.com/chikamso-cmd/Bump2Baby',
-    githubUrl: 'https://bump-2-baby.netlify.app/',
+    githubUrl: 'https://github.com/chikamso-cmd/Bump2Baby',
+    liveUrl: 'https://bump-2-baby.netlify.app/ ',
     category: 'React',
   },
   {

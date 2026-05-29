@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-// import { ThemeToggle } from './ui/ThemeToggle';
+import { ThemeToggle } from './ui/ThemeToggle';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -23,9 +23,8 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4 glass border-b' : 'py-6 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass border-b' : 'py-6 bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <motion.a
@@ -51,12 +50,12 @@ export const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center space-x-4">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-slate-600 dark:text-slate-400"
