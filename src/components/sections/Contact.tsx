@@ -153,7 +153,7 @@ export const Contact = () => {
                     target="_blank"             // Opens in a new tab
                     rel="noopener noreferrer"    // Security best practice
                     whileHover={{ y: -5 }}
-                    className="p-3 glass hover:bg-primary-500 hover:text-white transition-all rounded-xl"
+                    className="p-3 glass hover:bg-primary-500 hover:text-black transition-all rounded-xl"
                   >
                     <Icon size={20} />
                   </motion.a>

@@ -2,6 +2,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  keyTechnicalContributions: string[];
   image: string;
   techStack: string[];
   liveUrl: string;
@@ -12,14 +13,14 @@ export interface Project {
 export interface Skill {
   name: string;
   icon: string;
-  level: number; // 0 to 100
-  category: 'Frontend' | 'Backend' | 'Tools' | 'Soft Skills' | 'DevOps' | 'Analytics' | "Hosting" | 'Best Practices';
+  category: 'Languages' | 'Frameworks & Libraries' | 'Tools & Platforms';
 }
 
 export interface Experience {
   id: string;
   company: string;
   role: string;
+  employmentType?: 'Contract';
   period: string;
   description: string;
 }

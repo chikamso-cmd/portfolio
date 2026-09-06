@@ -42,7 +42,7 @@ export const ExperienceServices = () => {
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
               <Icons.Briefcase className="text-primary-600" /> Career Path
             </h3>
-            <div className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+            <div className="space-y-8 relative before:absolute before:left-2.75 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
               {EXPERIENCE.map((exp, index) => (
                 <motion.div
                   key={exp.id}
@@ -55,6 +55,11 @@ export const ExperienceServices = () => {
                   <div className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-primary-600 border-4 border-slate-50 dark:border-slate-900 z-10" />
                   <div className="mb-1 flex flex-wrap items-center gap-x-4">
                     <h4 className="text-xl font-bold">{exp.role}</h4>
+                    {exp.employmentType && (
+                      <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        {exp.employmentType}
+                      </span>
+                    )}
                     <span className="text-sm font-semibold text-primary-600 bg-primary-100 dark:bg-primary-900/30 px-2 py-0.5 rounded">
                       {exp.period}
                     </span>

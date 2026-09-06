@@ -5,10 +5,15 @@ import { User, Code, Rocket } from 'lucide-react';
 
 export const About = () => {
   return (
-    <section id="about" className="section-padding bg-white dark:bg-slate-900/50">
+    <section
+      id="about"
+      className="section-padding bg-white dark:bg-slate-900/50"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 dark:text-white">About Me</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 dark:text-white">
+            About Me
+          </h2>
           <div className="w-20 h-1.5 bg-primary-600 mx-auto rounded-full" />
         </div>
 
@@ -20,45 +25,57 @@ export const About = () => {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 italic">
-              Passionate about crafting pixel-perfect, high-performance web experiences.
+              Passionate about crafting pixel-perfect, high-performance web
+              experiences.
             </h3>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              I am a dedicated Frontend Developer with a strong foundation in modern web technologies.
-              My journey began with curiosity about how the web works and grew into a focus on building
-              delightful, accessible interfaces that scale with real user needs.
+              I am a results-driven Frontend Developer specializing in modern
+              web technologies. I am passionate about engineering
+              high-performance, accessible, and scalable user interfaces that
+              directly address user needs and drive business value.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              I prioritize fast load times, intuitive interactions, and clean, maintainable code. I use
-              component-driven architecture, automated testing, and type-safe tooling to deliver reliable
-              experiences that are easy to iterate on.
+              My development philosophy centers on delivering optimal load
+              times, intuitive interactions, and highly maintainable code. I
+              leverage component-driven architecture, type-safe tooling, and
+              frameworks like Next.js to build reliable, robust applications
+              that support rapid iteration.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              My toolchain includes Git and GitHub for version control, CI/CD pipelines for continuous
-              delivery, and deployments to platforms like Vercel, Netlify, and Render. I work with package
-              managers such as npm, yarn, and bun, and I use analytics and optimization tools like PostHog
-              alongside Lighthouse and other performance profilers to measure and improve real-user
-              experience. Cross-browser compatibility and progressive enhancement are standard practices
-              in my workflow.
+              My technical toolchain encompasses precise version control
+              (Git/GitHub), automated CI/CD pipelines, and seamless deployments
+              across platforms such as Vercel, Netlify, and Render. I am
+              proficient with modern package managers (npm, Yarn, Bun) and
+              actively utilize analytics and performance profiling
+              tools—including PostHog and Lighthouse—to continuously measure and
+              optimize the real-world user experience. Cross-browser
+              compatibility and progressive enhancement remain foundational to
+              my workflow.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              I enjoy collaborating closely with designers, product managers, and backend engineers,
-              participating in code reviews and mentoring teammates to raise the bar for quality and
-              consistency. I'm always learning and open to new tools and patterns that make products
-              faster, more accessible, and more enjoyable to use.
+              I thrive in cross-functional environments, collaborating closely
+              with designers, product managers, and backend engineers. By
+              actively participating in code reviews and sharing knowledge with
+              peers, I consistently strive to elevate team standards for quality
+              and codebase consistency. I remain committed to continuous
+              learning, readily adopting emerging tools and architectural
+              patterns to build faster, more inclusive digital products.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">
                   <User size={20} />
                 </div>
                 <span className="font-medium text-sm">Age: 28</span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">
                   <Rocket size={20} />
                 </div>
-                <span className="font-medium text-sm">Experience: 3+ Years</span>
+                <span className="font-medium text-sm">
+                  Experience: 3+ Years
+                </span>
               </div>
             </div>
           </motion.div>
@@ -78,9 +95,12 @@ export const About = () => {
                   <Code size={24} />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Technical Excellence</h4>
+                  <h4 className="text-xl font-bold mb-2">
+                    Technical Excellence
+                  </h4>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Proficient in building complex SPAs using React, TypeScript, and state management libraries.
+                    Proficient in building complex SPAs using React, TypeScript,
+                    and state management libraries.
                   </p>
                 </div>
               </div>
@@ -93,7 +113,8 @@ export const About = () => {
                 <div>
                   <h4 className="text-xl font-bold mb-2">Performance Focus</h4>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Committed to optimizing load times and ensuring smooth animations for the best user experience.
+                    Committed to optimizing load times and ensuring smooth
+                    animations for the best user experience.
                   </p>
                 </div>
               </div>

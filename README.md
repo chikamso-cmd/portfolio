@@ -1,6 +1,6 @@
-<div align="center">
-  <img width="1200" height="475" alt="Portfolio Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+<!-- <div align="center">
+ 
+</div> -->
 
 # Personal Portfolio Website
 
@@ -21,7 +21,7 @@ This project is a responsive portfolio website showcasing personal branding, ski
 
 ## Tech Stack
 
-- Bun (package manager and runtime)
+- npm (package manager and runtime)
 - React
 - TypeScript
 - Tailwind CSS
@@ -34,7 +34,7 @@ This project is a responsive portfolio website showcasing personal branding, ski
 
 ### Prerequisites
 
-- Bun installed (recommended)
+- npm installed (recommended)
 - Git
 
 If Bun is not installed, follow the official installation instructions: https://bun.sh/
@@ -49,13 +49,13 @@ cd my-portfolio
 ### Install dependencies
 
 ```bash
-bun install
+npm install
 ```
 
 ### Start the development server
 
 ```bash
-bun run dev
+npm run dev
 ```
 
 Open the URL shown in the terminal (typically `http://localhost:3000`).
@@ -63,13 +63,13 @@ Open the URL shown in the terminal (typically `http://localhost:3000`).
 ## Build for Production
 
 ```bash
-bun run build
+npm run build
 ```
 
 ## Preview Production Build
 
 ```bash
-bun run preview
+npm run preview
 ```
 
 ## Project Structure
