@@ -66,8 +66,8 @@ export const ExperienceServices = () => {
             />
             <div className="-mt-6 flex flex-wrap gap-3">
               <a
-                href="/Nwafor%20Godspower%20Chikamso.pdf"
-                download="Nwafor_Godspower_Chikamso_CV.pdf"
+                href="/Nwafor_Godspower_Chikamso_Frontend_Engineer_CV.pdf"
+                download="Nwafor_Godspower_Chikamso_Frontend_Engineer_CV.pdf"
                 className={buttonClasses('primary', 'md')}
               >
                 <Download className="h-4 w-4" />

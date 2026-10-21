@@ -62,7 +62,7 @@ export const Hero = () => {
             </Button>
             <a
             
-              href="/Nwafor%20Godspower%20Chikamso.pdf"
+              href="/Nwafor_Godspower_Chikamso_Frontend_Engineer_CV.pdf"
               download="Nwafor_Godspower_Chikamso_Frontend_Engineer_CV.pdf"
               className={buttonClasses('outline', 'lg')}
             >

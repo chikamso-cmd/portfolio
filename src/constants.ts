@@ -156,16 +156,17 @@ export const PROJECTS: Project[] = [
     id: "8",
     title: "SaveCircle",
     description:
-      "SaveCircle helps manage your Ajo groups with ease — track contributions, monitor members, set payout schedules, and keep everyone in the loop.",
+      "Collections and payout software for Ajo and Esusu groups, cooperatives and businesses in Nigeria. Payments are matched to members automatically, replacing paper registers and WhatsApp screenshots. Frontend MVP built; preparing for pilot.",
     keyTechnicalContributions: [
-      "Built dynamic multi-criteria search and filtering tools leveraging React Query to fetch and cache data efficiently.",
-      "Designed interactive UI elements including property image galleries, admin verification badges, and direct inquiry modals.",
-      "Reduced DOM re-render bottlenecks through strategic memoization, delivering smooth map-and-list navigation.",
+      "Wrote the full product spec covering the money model, roles and permissions, data model and business rules.",
+      "Built a 4-step organisation onboarding flow and an admin dashboard covering collections, arrears, exceptions and cash in hand.",
+      "Built screens for groups, members, payments with an unmatched-payments queue, maker-checker withdrawals, reconciliation and billing.",
+      "Shipped a server-rendered Next.js landing page with full SEO and an accessible hero carousel.",
     ],
     clientValue:
-      "Running a ajo,, coporative society or a registered business? I build search, filtering, and helps manage your Ajo groups with ease — track contributions, monitor members.",
+      "Running a savings group, cooperative or business? I build trustworthy finance tools with clear records, approvals and audit trails.",
     image: "/save.jpg",
-    techStack: ["React", "TypeScript", "Tailwind", "ReactQuery", "Zustand"],
+    techStack: ["React", "TypeScript", "Tailwind", "Next.js"],
     liveUrl: "https://save-circle.netlify.app",
     githubUrl: "https://github.com/savecircle",
     category: "Fullstack",
