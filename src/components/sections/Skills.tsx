@@ -1,25 +1,22 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { SKILLS } from '../../constants';
-import * as Icons from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
+import { getIcon } from '../ui/icons';
+
+const CATEGORIES = ['Languages', 'Frameworks & Libraries', 'Tools & Platforms'] as const;
 
 export const Skills = () => {
-  const categories = ['Languages', 'Frameworks & Libraries', 'Tools & Platforms'] as const;
-
   return (
-    <section id="skills" className="section-padding bg-slate-50 dark:bg-slate-900/30">
+    <section id="skills" className="section-padding border-y border-zinc-200 bg-zinc-50/60 dark:border-zinc-900 dark:bg-zinc-900/20">
       <div className="max-w-7xl mx-auto">
-        <div className="max-w-2xl mb-12">
-          <p className="text-sm font-mono uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400 mb-4">Toolkit</p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Skills that ship work</h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg">
-            A practical stack for building polished, resilient products from the first component to production.
-          </p>
-          <div className="w-20 h-1.5 bg-primary-600 rounded-full" />
-        </div>
+        <SectionHeader
+          eyebrow="Toolkit"
+          title="Skills that ship work"
+          description="A practical stack for building polished, resilient products from the first component to production."
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {categories.map((category, categoryIndex) => {
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {CATEGORIES.map((category, categoryIndex) => {
             const categorySkills = SKILLS.filter((skill) => skill.category === category);
 
             return (
@@ -28,25 +25,24 @@ export const Skills = () => {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: categoryIndex * 0.12 }}
-                className="glass rounded-2xl p-6 md:p-7 border-t-4 border-t-primary-500"
+                transition={{ delay: categoryIndex * 0.1 }}
+                className="surface p-7"
               >
-                <div className="mb-7">
-                  <div>
-                    <h3 className="text-xl font-bold">{category}</h3>
-                  </div>
+                <div className="mb-6 flex items-baseline justify-between">
+                  <h3 className="font-display text-lg font-semibold tracking-tight">{category}</h3>
+                  <span className="font-mono text-xs text-zinc-400">{String(categorySkills.length).padStart(2, '0')}</span>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   {categorySkills.map((skill) => {
-                    const IconComponent = (Icons as any)[skill.icon] || Icons.Code;
+                    const IconComponent = getIcon(skill.icon);
 
                     return (
                       <div
                         key={skill.name}
-                        className="inline-flex items-center gap-2 rounded-xl bg-slate-100/80 dark:bg-slate-800/80 px-3 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors hover:bg-primary-100 hover:text-primary-700 dark:hover:bg-primary-900/40 dark:hover:text-primary-300"
+                        className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1.5 text-sm font-medium text-zinc-700 transition-colors hover:border-primary-300 hover:text-primary-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-primary-700 dark:hover:text-primary-300"
                       >
-                        <IconComponent size={16} className="text-primary-600 dark:text-primary-400" />
+                        <IconComponent size={14} className="text-zinc-400" />
                         <span>{skill.name}</span>
                       </div>
                     );

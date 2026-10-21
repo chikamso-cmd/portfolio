@@ -31,11 +31,13 @@ export const PROJECTS: Project[] = [
       "Designed modular component layouts with Tailwind CSS, ensuring full mobile-first responsiveness across all viewport sizes.",
       "Optimized product catalog rendering using lazy loading and responsive image formatting, reducing initial page load times by over 30%.",
     ],
+    clientValue:
+      "Selling online? I build storefronts with frictionless carts and checkout flows that turn browsers into repeat buyers.",
     image:
       "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767283080/Screenshot_2026-01-01_165729_vm3vmj.png",
     techStack: ["React", "Tailwind CSS", "Redux"],
     liveUrl: "https://yamlfoods.ng/",
-    githubUrl: "ttps://github.com/yamltech/grocery-shop",
+    githubUrl: "https://github.com/yamltech/grocery-shop",
     category: "Fullstack",
   },
   {
@@ -48,6 +50,8 @@ export const PROJECTS: Project[] = [
       "Integrated React Query for efficient asynchronous state management, smart caching, and background data fetching.",
       "Applied performance profiling to optimize page load speeds, maintaining strong Core Web Vitals metrics across all landing pages.",
     ],
+    clientValue:
+      "Need a credible web presence? I craft fast, polished company sites that build trust and pass Core Web Vitals.",
     image:
       "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767328654/yamltechl%20landingpage.png",
     techStack: ["React", "TypeScript", "React Query"],
@@ -65,6 +69,8 @@ export const PROJECTS: Project[] = [
       "Integrated fluid UI transitions and dynamic backgrounds using Framer Motion, reacting smoothly to search queries and theme toggles.",
       "Implemented accessible search, filtering, and comparison features for complex geographic and demographic data.",
     ],
+    clientValue:
+      "Have data users need to explore? I turn APIs into searchable, responsive dashboards that feel instant.",
     image:
       "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767799281/Screenshot_2026-01-07_161751_cd1skd.png",
     techStack: ["React", "API Integration", "Motion"],
@@ -82,6 +88,8 @@ export const PROJECTS: Project[] = [
       "Enforced WCAG 2.1 AA accessibility standards, including native keyboard navigation, focus management, and screen-reader support.",
       "Created flexible theme tokens supporting seamless dark and light mode toggles without layout shifting.",
     ],
+    clientValue:
+      "Scaling a product? I build accessible, themeable component libraries so your team ships consistent UI faster.",
     image:
       "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1767290067/Screenshot_2026-01-01_185351_rpk2rz.png",
     techStack: ["React", "TypeScript", "Tailwind"],
@@ -99,6 +107,8 @@ export const PROJECTS: Project[] = [
       "Ensured mobile-first usability with optimized touch targets, intuitive navigation patterns, and accessible typography.",
       "Managed complex form validation and multi-step onboarding flows using custom React hooks and type-safe schemas.",
     ],
+    clientValue:
+      "Building for health or wellness? I design caring, mobile-first experiences with onboarding that users actually finish.",
     image:
       "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1768566261/Screenshot_2026-01-15_174324_wtukup.png",
     techStack: ["React", "TypeScript", "Tailwind"],
@@ -116,6 +126,8 @@ export const PROJECTS: Project[] = [
       "Implemented list virtualization for large tabular datasets, maintaining 60 FPS scrolling and low memory utilization.",
       "Partnered with backend engineers to establish typed API contracts for streaming real-time fraud metrics securely.",
     ],
+    clientValue:
+      "Working with sensitive, data-heavy screens? I deliver secure dashboards that stay smooth with thousands of rows.",
     image: "/axiom.JPG",
     techStack: ["React", "TypeScript", "Tailwind"],
     liveUrl: "https://axiomvault.netlify.app",
@@ -132,10 +144,30 @@ export const PROJECTS: Project[] = [
       "Designed interactive UI elements including property image galleries, agent verification badges, and direct inquiry modals.",
       "Reduced DOM re-render bottlenecks through strategic memoization, delivering smooth map-and-list navigation.",
     ],
+    clientValue:
+      "Running a marketplace? I build search, filtering, and listing experiences that connect buyers and sellers quickly.",
     image: "/land.JPG",
     techStack: ["React", "TypeScript", "Tailwind", "ReactQuery"],
     liveUrl: "https://ogalandlord.netlify.app",
     githubUrl: "https://github.com/ogaLandLords/frontend",
+    category: "Fullstack",
+  },
+  {
+    id: "8",
+    title: "SaveCircle",
+    description:
+      "SaveCircle helps manage your Ajo groups with ease — track contributions, monitor members, set payout schedules, and keep everyone in the loop.",
+    keyTechnicalContributions: [
+      "Built dynamic multi-criteria search and filtering tools leveraging React Query to fetch and cache data efficiently.",
+      "Designed interactive UI elements including property image galleries, admin verification badges, and direct inquiry modals.",
+      "Reduced DOM re-render bottlenecks through strategic memoization, delivering smooth map-and-list navigation.",
+    ],
+    clientValue:
+      "Running a ajo,, coporative society or a registered business? I build search, filtering, and helps manage your Ajo groups with ease — track contributions, monitor members.",
+    image: "/save.jpg",
+    techStack: ["React", "TypeScript", "Tailwind", "ReactQuery", "Zustand"],
+    liveUrl: "https://save-circle.netlify.app",
+    githubUrl: "https://github.com/savecircle",
     category: "Fullstack",
   },
 ];
@@ -148,6 +180,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Frontend Developer',
     period: '2020 - 2022',
     description: 'Delivered client-facing web projects from design to production, translating visual designs into interactive, cross-browser-compatible websites while ensuring performance and SEO best practices.',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'SEO'],
   },
   {
     id: '2',
@@ -155,6 +188,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Frontend Developer',
     period: '2023 - 2025',
     description: 'Built and maintained responsive, accessible user interfaces using React and TypeScript; collaborated with backend engineers to integrate APIs and improve performance and developer workflows.',
+    tech: ['React', 'TypeScript', 'React Query'],
   },
   {
     id: '3',
@@ -162,6 +196,7 @@ export const EXPERIENCE: Experience[] = [
     role: 'Frontend Developer',
     period: '2026',
     description: 'Leading frontend development for secure enterprise applications; responsible for performance optimization, component architecture, and implementing CI/CD and observability integrations.',
+    tech: ['React', 'TypeScript', 'CI/CD'],
   },
   {
     id: '4',
@@ -170,6 +205,7 @@ export const EXPERIENCE: Experience[] = [
     employmentType: 'Contract',
     period: '2026 ',
     description: 'Built the scalable marketplace frontend focused on real-world usability, responsive design, and fast load times; worked closely with product and backend teams to ship iterative improvements.',
+    tech: ['React', 'TypeScript', 'React Query'],
   },
   
   {
@@ -179,6 +215,7 @@ export const EXPERIENCE: Experience[] = [
     employmentType: 'Contract',
     period: '2026',
     description: 'Architected component libraries and frontend best practices, mentored engineers, and established testing and accessibility standards to improve delivery quality across projects.',
+    tech: ['Component Libraries', 'Testing', 'Accessibility'],
   },
   {
     id: '6',
@@ -187,6 +224,7 @@ export const EXPERIENCE: Experience[] = [
     employmentType: 'Contract',
     period: '2026',
     description: 'Built a responsive shopping experience with persistent cart workflows, coupon calculations, and checkout state management using React, Tailwind CSS, and Redux Toolkit.',
+    tech: ['React', 'Tailwind CSS', 'Redux Toolkit'],
   },
 ];
 

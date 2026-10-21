@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS } from '../../constants';
-import { Card } from '../ui/Card';
-import { ChevronDown, ExternalLink, Github } from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
+import { ArrowUpRight, ChevronDown, Github } from 'lucide-react';
 import { Project } from '../../types';
 
-const CATEGORIES = ['All', 'React', 'Fullstack', 'API-based', 'UI/UX'];
+const CATEGORIES = ['All', 'React', 'Next.js', 'Fullstack', 'API-based', 'UI/UX'];
 
 export const Projects = () => {
   const [filter, setFilter] = useState('All');
@@ -17,36 +17,48 @@ export const Projects = () => {
   return (
     <section id="projects" className="section-padding">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
-          <div className="text-left">
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">Featured Work</h2>
-            <div className="w-20 h-1.5 bg-primary-600 rounded-full" />
-          </div>
-
-          <div className="flex flex-wrap gap-2">
+        <SectionHeader
+          eyebrow="Selected work"
+          title="Featured Work"
+          description="Production apps and products I've designed, engineered, and shipped."
+        >
+          <div className="flex flex-wrap gap-1 rounded-full border border-zinc-200 bg-zinc-50 p-1 dark:border-zinc-800 dark:bg-zinc-900">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
+                type="button"
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                aria-pressed={filter === cat}
+                className={`relative rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                   filter === cat
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300 dark:hover:bg-slate-700'
+                    ? 'text-white dark:text-zinc-900'
+                    : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
                 }`}
               >
-                {cat}
+                {filter === cat && (
+                  <motion.span
+                    layoutId="project-filter"
+                    className="absolute inset-0 rounded-full bg-zinc-900 dark:bg-white"
+                    transition={{ type: 'spring', bounce: 0.2, duration: 0.45 }}
+                  />
+                )}
+                <span className="relative">{cat}</span>
               </button>
             ))}
           </div>
-        </div>
+        </SectionHeader>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <motion.div layout className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {filteredProjects.length === 0 && (
+          <p className="py-16 text-center text-zinc-500">No projects in this category yet.</p>
+        )}
       </div>
     </section>
   );
@@ -54,66 +66,82 @@ export const Projects = () => {
 
 const ProjectCard = ({ project, index }: { project: Project; index: number; key?: React.Key }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const hasRepo = project.githubUrl && project.githubUrl !== '#';
 
   return (
-    <motion.div
+    <motion.article
       layout
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      whileHover={{ y: -10 }}
-      className="group relative glass rounded-3xl overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.96 }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="group surface flex flex-col overflow-hidden transition-[border-color,box-shadow] duration-300 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-900/5 dark:hover:border-zinc-700 dark:hover:shadow-black/30"
     >
-      <div className="aspect-video overflow-hidden relative">
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative block aspect-16/10 overflow-hidden border-b border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-800"
+        aria-label={`Open ${project.title} live site`}
+      >
         <img
           src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          alt={`${project.title} screenshot`}
+          loading="lazy"
+          className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
-          <div className="flex gap-4">
+      </a>
+
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <span className="font-mono text-xs uppercase tracking-wider text-zinc-500">{project.category}</span>
+          <div className="flex gap-1">
+            {hasRepo && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} source code`}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-white"
+              >
+                <Github size={16} />
+              </a>
+            )}
             <a
               href={project.liveUrl}
-              className="p-3 bg-white text-slate-900 rounded-full hover:bg-primary-500 hover:text-white transition-colors"
-              title="Live Demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} live demo`}
+              className="flex h-8 w-8 items-center justify-center rounded-full text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-white"
             >
-              <ExternalLink size={20} />
-            </a>
-            <a
-              href={project.githubUrl}
-              className="p-3 bg-white text-slate-900 rounded-full hover:bg-primary-500 hover:text-white transition-colors"
-              title="GitHub Repo"
-            >
-              <Github size={20} />
+              <ArrowUpRight size={16} />
             </a>
           </div>
         </div>
-      </div>
 
-      <div className="p-8">
-        <div className="flex flex-wrap gap-2 mb-4">
+        <h3 className="mb-2 font-display text-xl font-semibold tracking-tight">{project.title}</h3>
+        <p className="mb-5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{project.description}</p>
+
+        <div className="mt-auto flex flex-wrap gap-1.5">
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400 bg-primary-100 dark:bg-primary-900/30 px-2 py-1 rounded-md"
+              className="rounded-full border border-zinc-200 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:border-zinc-800 dark:text-zinc-400"
             >
               {tech}
             </span>
           ))}
         </div>
-        <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-        <p className="text-slate-600 dark:text-slate-400">{project.description}</p>
 
         <button
           type="button"
           onClick={() => setIsExpanded((expanded) => !expanded)}
           aria-expanded={isExpanded}
-          className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 rounded-md"
+          className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-md text-sm font-medium text-primary-600 transition-colors hover:text-primary-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-primary-400 dark:hover:text-primary-300"
         >
-          {isExpanded ? 'Show less' : 'More details'}
-          <ChevronDown size={16} className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+          {isExpanded ? 'Show less' : 'Technical details'}
+          <ChevronDown size={15} className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
         </button>
 
         <AnimatePresence initial={false}>
@@ -125,23 +153,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number; key?
               transition={{ duration: 0.25 }}
               className="overflow-hidden"
             >
-              <div className="mt-6 border-t border-slate-200 dark:border-slate-800 pt-5">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">
-                  Key technical contributions
-                </h4>
-                <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                  {project.keyTechnicalContributions.map((contribution) => (
-                    <li key={contribution} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" aria-hidden="true" />
-                      <span>{contribution}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul className="mt-4 space-y-3 border-t border-zinc-200 pt-4 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+                {project.keyTechnicalContributions.map((contribution) => (
+                  <li key={contribution} className="flex gap-3">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary-500" aria-hidden="true" />
+                    <span>{contribution}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };

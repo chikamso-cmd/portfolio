@@ -1,124 +1,94 @@
-import React from 'react';
 import { motion } from 'motion/react';
+import { Code, MapPin, Rocket, Users } from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
 import { Card } from '../ui/Card';
-import { User, Code, Rocket } from 'lucide-react';
+
+const HIGHLIGHTS = [
+  {
+    Icon: Code,
+    title: 'Technical Excellence',
+    body: 'Complex SPAs with React, TypeScript, and modern state management.',
+  },
+  {
+    Icon: Rocket,
+    title: 'Performance Focus',
+    body: 'Fast load times and smooth interactions, measured and optimized.',
+  },
+  {
+    Icon: Users,
+    title: 'Team Player',
+    body: 'Close collaboration with design, product, and backend engineers.',
+  },
+];
 
 export const About = () => {
   return (
-    <section
-      id="about"
-      className="section-padding bg-white dark:bg-slate-900/50"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 dark:text-white">
-            About Me
-          </h2>
-          <div className="w-20 h-1.5 bg-primary-600 mx-auto rounded-full" />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 italic">
-              Passionate about crafting pixel-perfect, high-performance web
-              experiences.
-            </h3>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-              I am a results-driven Frontend Developer specializing in modern
-              web technologies. I am passionate about engineering
-              high-performance, accessible, and scalable user interfaces that
-              directly address user needs and drive business value.
-            </p>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-              My development philosophy centers on delivering optimal load
-              times, intuitive interactions, and highly maintainable code. I
-              leverage component-driven architecture, type-safe tooling, and
-              frameworks like Next.js to build reliable, robust applications
-              that support rapid iteration.
-            </p>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-              My technical toolchain encompasses precise version control
-              (Git/GitHub), automated CI/CD pipelines, and seamless deployments
-              across platforms such as Vercel, Netlify, and Render. I am
-              proficient with modern package managers (npm, Yarn, Bun) and
-              actively utilize analytics and performance profiling
-              tools—including PostHog and Lighthouse—to continuously measure and
-              optimize the real-world user experience. Cross-browser
-              compatibility and progressive enhancement remain foundational to
-              my workflow.
-            </p>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-              I thrive in cross-functional environments, collaborating closely
-              with designers, product managers, and backend engineers. By
-              actively participating in code reviews and sharing knowledge with
-              peers, I consistently strive to elevate team standards for quality
-              and codebase consistency. I remain committed to continuous
-              learning, readily adopting emerging tools and architectural
-              patterns to build faster, more inclusive digital products.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {/* <div className="flex items-center space-x-3">
-                <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">
-                  <User size={20} />
-                </div>
-                <span className="font-medium text-sm">Age: 28</span>
-              </div> */}
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg text-primary-600">
-                  <Rocket size={20} />
-                </div>
-                <span className="font-medium text-sm">
-                  Experience: 3+ Years
-                </span>
-              </div>
+    <section id="about" className="section-padding">
+      <div className="max-w-7xl mx-auto grid items-start gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative mx-auto w-full max-w-md lg:sticky lg:top-28"
+        >
+          <div className="surface overflow-hidden rounded-3xl p-2">
+            <img
+              loading="lazy"
+              src="/Nelson.jpg"
+              alt="Portrait of Nwafor God'spower Chikamso"
+              className="aspect-4/5 w-full rounded-[1.25rem] object-cover"
+            />
+          </div>
+          <div className="glass absolute -bottom-6 left-6 right-6 flex items-center justify-between rounded-2xl px-5 py-4 shadow-xl shadow-zinc-900/10 dark:shadow-black/40">
+            <div>
+              <p className="font-display text-2xl font-bold">3+ years</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">building for the web</p>
             </div>
-          </motion.div>
+            <div className="flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+              <MapPin size={15} /> Lagos, Nigeria
+            </div>
+          </div>
+        </motion.div>
 
-          <div className="grid grid-cols-1 gap-6">
-            <Card className="p-0 overflow-hidden" delay={0}>
-              <img
-                loading="lazy"
-                src="/Nelson.jpg"
-                alt="Nelson"
-                className="w-full h-96 sm:h-full md:h-80 lg:h-96 object-cover shadow-md"
-              />
-            </Card>
-            <Card className="p-6" delay={0.1}>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl text-blue-600 shrink-0">
-                  <Code size={24} />
+        <div>
+          <SectionHeader
+            eyebrow="About me"
+            title="Crafting pixel-perfect, high-performance web experiences."
+          />
+
+          <div className="-mt-4 space-y-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-lg">
+            <p>
+              I am a results-driven Frontend Developer specializing in modern web technologies. I am passionate about
+              engineering high-performance, accessible, and scalable user interfaces that directly address user needs and
+              drive business value.
+            </p>
+            <p>
+              My development philosophy centers on delivering optimal load times, intuitive interactions, and highly
+              maintainable code. I leverage component-driven architecture, type-safe tooling, and frameworks like Next.js
+              to build reliable, robust applications that support rapid iteration.
+            </p>
+            <p>
+              My toolchain spans Git/GitHub, automated CI/CD pipelines, and deployments across Vercel, Netlify, and Render.
+              I work with npm, Yarn, and Bun, and use analytics and profiling tools such as PostHog and Lighthouse to
+              continuously measure and optimize the real-world user experience.
+            </p>
+            <p>
+              I thrive in cross-functional environments, actively participate in code reviews, and stay committed to
+              continuous learning, adopting emerging tools and patterns to build faster, more inclusive digital products.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {HIGHLIGHTS.map(({ Icon, title, body }, i) => (
+              <Card key={title} className="p-5" delay={i * 0.08}>
+                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-primary-50 text-primary-600 dark:bg-primary-950/50 dark:text-primary-400">
+                  <Icon size={18} />
                 </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2">
-                    Technical Excellence
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    Proficient in building complex SPAs using React, TypeScript,
-                    and state management libraries.
-                  </p>
-                </div>
-              </div>
-            </Card>
-            <Card className="p-6" delay={0.2}>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl text-purple-600 shrink-0">
-                  <Rocket size={24} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2">Performance Focus</h4>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    Committed to optimizing load times and ensuring smooth
-                    animations for the best user experience.
-                  </p>
-                </div>
-              </div>
-            </Card>
+                <h3 className="mb-1 text-sm font-semibold">{title}</h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">{body}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

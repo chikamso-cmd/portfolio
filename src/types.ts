@@ -3,6 +3,8 @@ export interface Project {
   title: string;
   description: string;
   keyTechnicalContributions: string[];
+  /** Short pitch shown in the hero carousel: how this kind of work helps a client. */
+  clientValue: string;
   image: string;
   techStack: string[];
   liveUrl: string;
@@ -23,6 +25,7 @@ export interface Experience {
   employmentType?: 'Contract';
   period: string;
   description: string;
+  tech: string[];
 }
 
 export interface Service {

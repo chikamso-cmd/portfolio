@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ui/ThemeToggle';
-import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'About', href: '#about' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
+  { name: 'Work', href: '#projects' },
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -14,81 +14,113 @@ const NAV_LINKS = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [active, setActive] = useState('');
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Highlight the nav link for the section currently in view.
+  useEffect(() => {
+    const sections = NAV_LINKS.map((l) => document.querySelector(l.href)).filter(Boolean) as Element[];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 glass border-b' : 'py-6 bg-transparent'
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-2.5 transition-all duration-300 md:px-6 ${
+          isScrolled ? 'glass shadow-lg shadow-zinc-900/5 dark:shadow-black/30' : 'border border-transparent bg-transparent'
         }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.a
-          href="#"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-display font-bold text-primary-600 dark:text-primary-400"
-        >
-          Nwafor<span className="text-slate-900 dark:text-slate-100"> God'spower</span>
-        </motion.a>
+      >
+        <a href="#" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-900 text-sm text-white dark:bg-white dark:text-zinc-900">
+            NG
+          </span>
+          <span className="hidden sm:inline">
+            Nwafor<span className="text-zinc-500 dark:text-zinc-400"> God'spower</span>
+          </span>
+        </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {NAV_LINKS.map((link, i) => (
-            <motion.a
+        <div className="hidden items-center gap-1 md:flex">
+          {NAV_LINKS.map((link) => (
+            <a
               key={link.name}
               href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                active === link.href
+                  ? 'text-zinc-900 dark:text-white'
+                  : 'text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+              }`}
             >
+              {active === link.href && (
+                <motion.span
+                  layoutId="nav-active"
+                  className="absolute inset-0 -z-10 rounded-full bg-zinc-100 dark:bg-zinc-800"
+                  transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
+                />
+              )}
               {link.name}
-            </motion.a>
+            </a>
           ))}
-          <ThemeToggle />
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="flex items-center gap-2">
           <ThemeToggle />
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-600 dark:text-slate-400"
+          <a
+            href="#contact"
+            className="hidden items-center gap-1 rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 md:inline-flex"
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
+            Hire me <ArrowUpRight size={15} />
+          </a>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 dark:border-zinc-800 dark:text-zinc-300 md:hidden"
+          >
+            {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass overflow-hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="glass mx-auto mt-2 max-w-6xl rounded-3xl p-3 shadow-xl md:hidden"
           >
-            <div className="flex flex-col p-6 space-y-4">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block rounded-2xl px-4 py-3 text-base font-medium text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800"
+              >
+                {link.name}
+              </a>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };

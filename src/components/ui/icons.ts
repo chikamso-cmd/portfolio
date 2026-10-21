@@ -1,0 +1,53 @@
+import {
+  AppWindow,
+  Atom,
+  Braces,
+  Cloud,
+  CloudRain,
+  Code,
+  Code2,
+  Component,
+  Database,
+  FileJson,
+  Gauge,
+  GitBranch,
+  Layout,
+  Link,
+  LucideIcon,
+  Package,
+  Palette,
+  Repeat,
+  Server,
+  Smartphone,
+  TrendingUp,
+  Wind,
+  Zap,
+} from 'lucide-react';
+
+// Explicit map of the icon names referenced in constants.ts. Importing the whole
+// lucide-react namespace would bundle every icon, so add new names here when needed.
+const ICONS: Record<string, LucideIcon> = {
+  AppWindow,
+  Atom,
+  Braces,
+  Cloud,
+  CloudRain,
+  Code2,
+  Component,
+  Database,
+  FileJson,
+  Gauge,
+  GitBranch,
+  Layout,
+  Link,
+  Package,
+  Palette,
+  Repeat,
+  Server,
+  Smartphone,
+  TrendingUp,
+  Wind,
+  Zap,
+};
+
+export const getIcon = (name: string, fallback: LucideIcon = Code): LucideIcon => ICONS[name] ?? fallback;
