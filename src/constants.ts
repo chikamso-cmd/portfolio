@@ -103,25 +103,25 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/chikamso-cmd/Portfolio12",
     category: "Fullstack",
   },
-  {
-    id: "5",
-    title: "Bump2Baby",
-    description:
-      "Bump2Baby is a maternal health platform providing expectant mothers with personalized pregnancy tracking and healthcare insights.",
-    keyTechnicalContributions: [
-      "Developed user-centric dashboards featuring milestone trackers, interactive calendars, and structured resource libraries.",
-      "Ensured mobile-first usability with optimized touch targets, intuitive navigation patterns, and accessible typography.",
-      "Managed complex form validation and multi-step onboarding flows using custom React hooks and type-safe schemas.",
-    ],
-    clientValue:
-      "Building for health or wellness? I design caring, mobile-first experiences with onboarding that users actually finish.",
-    image:
-      "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1768566261/Screenshot_2026-01-15_174324_wtukup.png",
-    techStack: ["React", "TypeScript", "Tailwind"],
-    githubUrl: "https://github.com/chikamso-cmd/Bump2Baby",
-    liveUrl: "https://bump-2-baby.netlify.app/ ",
-    category: "React",
-  },
+  // {
+  //   id: "5",
+  //   title: "Bump2Baby",
+  //   description:
+  //     "Bump2Baby is a maternal health platform providing expectant mothers with personalized pregnancy tracking and healthcare insights.",
+  //   keyTechnicalContributions: [
+  //     "Developed user-centric dashboards featuring milestone trackers, interactive calendars, and structured resource libraries.",
+  //     "Ensured mobile-first usability with optimized touch targets, intuitive navigation patterns, and accessible typography.",
+  //     "Managed complex form validation and multi-step onboarding flows using custom React hooks and type-safe schemas.",
+  //   ],
+  //   clientValue:
+  //     "Building for health or wellness? I design caring, mobile-first experiences with onboarding that users actually finish.",
+  //   image:
+  //     "https://res.cloudinary.com/dfcr3ut7b/image/upload/v1768566261/Screenshot_2026-01-15_174324_wtukup.png",
+  //   techStack: ["React", "TypeScript", "Tailwind"],
+  //   githubUrl: "https://github.com/chikamso-cmd/Bump2Baby",
+  //   liveUrl: "https://bump-2-baby.netlify.app/ ",
+  //   category: "React",
+  // },
   {
     id: "6",
     title: "AxiomVault llc",
