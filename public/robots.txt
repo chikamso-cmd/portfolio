@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nwaforgodspower.netlify.app/sitemap.xml
