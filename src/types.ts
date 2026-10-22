@@ -9,7 +9,7 @@ export interface Project {
   techStack: string[];
   liveUrl: string;
   githubUrl: string;
-  category: 'React' | 'Fullstack' | 'API-based' | 'UI/UX';
+  category: 'React' | 'Fullstack' | 'API-based' | 'UI/UX' | 'Next.js';
 }
 
 export interface Skill {

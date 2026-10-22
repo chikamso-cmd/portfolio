@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { ArrowUpRight, CheckCircle2, Github, Linkedin, Loader2, Mail, MapPin, Send, Twitter } from 'lucide-react';
-import { Button } from '../ui/Button';
-import { SectionHeader } from '../ui/SectionHeader';
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  Github,
+  Linkedin,
+  Loader2,
+  Mail,
+  MapPin,
+  Send,
+  Twitter,
+} from "lucide-react";
+import { Button } from "../ui/Button";
+import { SectionHeader } from "../ui/SectionHeader";
 
 type FormFields = {
   name: string;
@@ -12,23 +22,27 @@ type FormFields = {
 
 type FormErrors = Partial<Record<keyof FormFields, string>>;
 
-type Status = { type: 'success' | 'error'; message: string } | null;
+type Status = { type: "success" | "error"; message: string } | null;
 
-const EMPTY_FORM: FormFields = { name: '', email: '', message: '' };
+const EMPTY_FORM: FormFields = { name: "", email: "", message: "" };
 
-const EMAIL = 'godspowerchikamso2@gmail.com';
+const EMAIL = "godspowerchikamso2@gmail.com";
 
 const SOCIALS = [
-  { Icon: Github, label: 'GitHub', url: 'https://github.com/chikamso-cmd' },
-  { Icon: Linkedin, label: 'LinkedIn', url: 'https://linkedin.com/in/nelson-nwafor-55b33533a' },
-  { Icon: Twitter, label: 'Twitter', url: 'https://twitter.com/@RealJude' },
+  { Icon: Github, label: "GitHub", url: "https://github.com/chikamso-cmd" },
+  {
+    Icon: Linkedin,
+    label: "LinkedIn",
+    url: "https://linkedin.com/in/godspower-chikamso",
+  },
+  { Icon: Twitter, label: "Twitter", url: "https://twitter.com/@RealJude" },
 ];
 
 const inputClasses = (hasError: boolean) =>
   `w-full rounded-xl border bg-white px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 transition-colors focus:outline-none focus:ring-4 dark:bg-zinc-950 dark:text-zinc-100 ${
     hasError
-      ? 'border-red-400 focus:border-red-500 focus:ring-red-500/10'
-      : 'border-zinc-200 focus:border-primary-500 focus:ring-primary-500/10 dark:border-zinc-800 dark:focus:border-primary-500'
+      ? "border-red-400 focus:border-red-500 focus:ring-red-500/10"
+      : "border-zinc-200 focus:border-primary-500 focus:ring-primary-500/10 dark:border-zinc-800 dark:focus:border-primary-500"
   }`;
 
 export const Contact = () => {
@@ -40,52 +54,67 @@ export const Contact = () => {
   const validateForm = () => {
     const tempErrors: FormErrors = {};
 
-    if (!formData.name.trim()) tempErrors.name = 'Name is required';
-    if (!formData.email.trim()) tempErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) tempErrors.email = 'Email is invalid';
-    if (!formData.message.trim()) tempErrors.message = 'Message is required';
+    if (!formData.name.trim()) tempErrors.name = "Name is required";
+    if (!formData.email.trim()) tempErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(formData.email))
+      tempErrors.email = "Email is invalid";
+    if (!formData.message.trim()) tempErrors.message = "Message is required";
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleChange = (field: keyof FormFields) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+  const handleChange =
+    (field: keyof FormFields) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus(null);
 
     if (!validateForm()) {
-      setStatus({ type: 'error', message: 'Please fill in all required fields correctly.' });
+      setStatus({
+        type: "error",
+        message: "Please fill in all required fields correctly.",
+      });
       return;
     }
 
     // Send the message through the Web3Forms API
     const form = new FormData();
-    form.append('access_key', '2a4cf41b-ff9b-4425-a5b3-986c77041254');
-    form.append('name', formData.name);
-    form.append('email', formData.email);
-    form.append('message', formData.message);
+    form.append("access_key", "2a4cf41b-ff9b-4425-a5b3-986c77041254");
+    form.append("name", formData.name);
+    form.append("email", formData.email);
+    form.append("message", formData.message);
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         body: form,
       });
       const result = await response.json();
 
       if (response.ok) {
-        setStatus({ type: 'success', message: "Message sent successfully! I'll get back to you soon." });
+        setStatus({
+          type: "success",
+          message: "Message sent successfully! I'll get back to you soon.",
+        });
         setFormData(EMPTY_FORM);
         setErrors({});
       } else {
-        setStatus({ type: 'error', message: result.message || 'There was an error sending your message.' });
+        setStatus({
+          type: "error",
+          message: result.message || "There was an error sending your message.",
+        });
       }
     } catch (error) {
-      setStatus({ type: 'error', message: 'An error occurred. Please try again.' });
-      console.error('Error:', error);
+      setStatus({
+        type: "error",
+        message: "An error occurred. Please try again.",
+      });
+      console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -112,11 +141,16 @@ export const Contact = () => {
                   <Mail size={20} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wider text-zinc-500">Email</p>
+                  <p className="text-xs uppercase tracking-wider text-zinc-500">
+                    Email
+                  </p>
                   <p className="truncate font-medium">{EMAIL}</p>
                 </div>
               </div>
-              <ArrowUpRight size={18} className="shrink-0 text-zinc-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight
+                size={18}
+                className="shrink-0 text-zinc-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
             </a>
 
             <div className="surface flex items-center gap-4 p-6">
@@ -124,13 +158,17 @@ export const Contact = () => {
                 <MapPin size={20} />
               </div>
               <div>
-                <p className="text-xs uppercase tracking-wider text-zinc-500">Location</p>
+                <p className="text-xs uppercase tracking-wider text-zinc-500">
+                  Location
+                </p>
                 <p className="font-medium">Lagos, Nigeria · Open to remote</p>
               </div>
             </div>
 
             <div className="surface p-6">
-              <p className="mb-4 text-xs uppercase tracking-wider text-zinc-500">Follow me</p>
+              <p className="mb-4 text-xs uppercase tracking-wider text-zinc-500">
+                Follow me
+              </p>
               <div className="flex gap-2">
                 {SOCIALS.map(({ Icon, label, url }) => (
                   <a
@@ -159,7 +197,10 @@ export const Contact = () => {
             <form onSubmit={handleSubmit} noValidate className="space-y-5">
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  <label
+                    htmlFor="name"
+                    className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                  >
                     Full name
                   </label>
                   <input
@@ -171,12 +212,17 @@ export const Contact = () => {
                     aria-invalid={!!errors.name}
                     className={inputClasses(!!errors.name)}
                     value={formData.name}
-                    onChange={handleChange('name')}
+                    onChange={handleChange("name")}
                   />
-                  {errors.name && <p className="text-xs text-red-500">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-xs text-red-500">{errors.name}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                  >
                     Email address
                   </label>
                   <input
@@ -188,13 +234,18 @@ export const Contact = () => {
                     aria-invalid={!!errors.email}
                     className={inputClasses(!!errors.email)}
                     value={formData.email}
-                    onChange={handleChange('email')}
+                    onChange={handleChange("email")}
                   />
-                  {errors.email && <p className="text-xs text-red-500">{errors.email}</p>}
+                  {errors.email && (
+                    <p className="text-xs text-red-500">{errors.email}</p>
+                  )}
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label
+                  htmlFor="message"
+                  className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+                >
                   Your message
                 </label>
                 <textarea
@@ -205,9 +256,11 @@ export const Contact = () => {
                   aria-invalid={!!errors.message}
                   className={`${inputClasses(!!errors.message)} resize-none`}
                   value={formData.message}
-                  onChange={handleChange('message')}
+                  onChange={handleChange("message")}
                 />
-                {errors.message && <p className="text-xs text-red-500">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-xs text-red-500">{errors.message}</p>
+                )}
               </div>
 
               <Button
@@ -218,7 +271,7 @@ export const Contact = () => {
                 disabled={isSubmitting}
               >
                 {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
-                {isSubmitting ? 'Sending...' : 'Send message'}
+                {isSubmitting ? "Sending..." : "Send message"}
               </Button>
 
               {status && (
@@ -227,10 +280,12 @@ export const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   role="status"
                   className={`flex items-center justify-center gap-2 text-sm font-medium ${
-                    status.type === 'success' ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-500'
+                    status.type === "success"
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : "text-red-500"
                   }`}
                 >
-                  {status.type === 'success' && <CheckCircle2 size={16} />}
+                  {status.type === "success" && <CheckCircle2 size={16} />}
                   {status.message}
                 </motion.p>
               )}
