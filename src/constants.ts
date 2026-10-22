@@ -220,7 +220,7 @@ export const EXPERIENCE: Experience[] = [
     id: "3",
     company: "AXIOMVAULT LLC",
     role: "Frontend Developer",
-    period: "2026",
+    period: "Jan 2025 - Feb 2026",
     description:
       "Leading frontend development for secure enterprise applications; responsible for performance optimization, component architecture, and implementing CI/CD and observability integrations.",
     tech: [
@@ -239,7 +239,7 @@ export const EXPERIENCE: Experience[] = [
     company: "OgaLandLord",
     role: "Frontend Developer",
     employmentType: "Contract",
-    period: "2026 ",
+    period: "Feb 2024 - Dec 2024",
     description:
       "Built the scalable marketplace frontend focused on real-world usability, responsive design, and fast load times; worked closely with product and backend teams to ship iterative improvements.",
     tech: [
@@ -257,7 +257,7 @@ export const EXPERIENCE: Experience[] = [
     company: "MpfStudio91",
     role: "Lead Frontend Developer",
     employmentType: "Contract",
-    period: "2026",
+    period: "Mar 2026 - Jul 2026",
     description:
       "Architected component libraries and frontend best practices, mentored engineers, and established testing and accessibility standards to improve delivery quality across projects.",
     tech: [
